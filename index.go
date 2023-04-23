@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 	msg := "first message"
@@ -15,8 +18,15 @@ func main() {
 	changeMessagePointer(msgPointer, "new message 2")
 	fmt.Println("changed msg:", msg)
 
+	upperAllLetter(&msg)
+	fmt.Println("upper msg by pointer of msg:", msg)
+
 }
 
 func changeMessagePointer(aPointer *string, newMessage string) {
 	*aPointer = newMessage
+}
+
+func upperAllLetter(strPointer *string) {
+	*strPointer = strings.ToUpper(*strPointer)
 }
