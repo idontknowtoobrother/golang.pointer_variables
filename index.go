@@ -11,6 +11,10 @@ func main() {
 
 	changeMessagePointer(&msg, "new message")
 	fmt.Println("changed msg:", msg)
+
+	changeMessagePointer(msgPointer, "new message 2")
+	fmt.Println("changed msg:", msg)
+
 }
 
 func changeMessagePointer(aPointer *string, newMessage string) {
